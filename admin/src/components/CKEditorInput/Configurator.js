@@ -24,6 +24,7 @@ import ckeditor5SpecialCharactersDll from "@ckeditor/ckeditor5-special-character
 import ckeditor5TableDll from "@ckeditor/ckeditor5-table/build/table.js";
 import ckeditor5WordCountDll from "@ckeditor/ckeditor5-word-count/build/word-count.js";
 import ckeditor5MaximumLengthDll from "@reinmar/ckeditor5-maximum-length/build/maximum-length.js";
+import ckeditor5SourceEditingDll from "@ckeditor/ckeditor5-source-editing/build/source-editing.js";
 import { StrapiMediaLib } from "./plugins/StrapiMediaLib";
 
 const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
@@ -65,7 +66,6 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
     heading: {
       options: [
         { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
-        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
         { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
         { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
         { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
@@ -212,25 +212,24 @@ const CKEDITOR_BASE_CONFIG_FOR_PRESETS = {
       window.CKEditor5.table.TableCaption,
       window.CKEditor5.wordCount.WordCount,
       window.CKEditor5.highlight.Highlight,
+      window.CKEditor5.sourceEditing.SourceEditing,
       StrapiMediaLib
     ],
     toolbar: {
       items: [
         'undo', 'redo',
         '|',
-        'findAndReplace', 'selectAll',
-        '|',
         'heading',
         '|',
-        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
+        'fontSize', 'fontColor', 'fontBackgroundColor',
         '|',
         'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'code', 'removeFormat',
         '-',
-        'link', 'strapiMediaLib', 'mediaEmbed', 'insertTable', 'horizontalLine', 'blockQuote', 'codeBlock', 'htmlEmbed', 'specialCharacters', 'highlight',
+        'link', 'strapiMediaLib', 'mediaEmbed', 'insertTable', 'horizontalLine', 'blockQuote', 'codeBlock', 'specialCharacters',
         '|',
-        'alignment',
+        'bulletedList', 'numberedList', 'outdent', 'indent',
         '|',
-        'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent', 
+        'sourceEditing'
       ],
       shouldNotGroupWhenFull: true
     },
